@@ -9,22 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface MyView : UIView {
-	UIImage *image;
-}
 
-@property (retain) UIImage *image;
-
-- (void)drawRect:(CGRect)rect;
-
-@end
-
-@interface TimeMachineCameraViewController : UIViewController<AVCaptureVideoDataOutputSampleBufferDelegate> {
+@interface TimeMachineCameraViewController : UIViewController {
 	UIImageView *imageView;
-	MyView *myview;
 }
-
-- (void)setupCaptureSession;
-- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
 
 @end

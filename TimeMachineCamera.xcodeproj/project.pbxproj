@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* TimeMachineCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* TimeMachineCameraViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* TimeMachineCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* TimeMachineCameraViewController.m */; };
+		DB59847F126175C8001E6E77 /* CaptureWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59847E126175C8001E6E77 /* CaptureWrapper.m */; };
 		F016DBDF12405A1B00065031 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F016DBDE12405A1B00065031 /* AVFoundation.framework */; };
 		F016DC3B12405EDE00065031 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F016DC3A12405EDE00065031 /* QuartzCore.framework */; };
 		F016DC6212405F5500065031 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F016DC6112405F5500065031 /* CoreVideo.framework */; };
@@ -35,6 +36,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* TimeMachineCamera_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeMachineCamera_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TimeMachineCamera-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TimeMachineCamera-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DB59847D126175C8001E6E77 /* CaptureWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureWrapper.h; sourceTree = "<group>"; };
+		DB59847E126175C8001E6E77 /* CaptureWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureWrapper.m; sourceTree = "<group>"; };
 		F016DBDE12405A1B00065031 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F016DC3A12405EDE00065031 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F016DC6112405F5500065031 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
@@ -66,6 +69,8 @@
 				1D3623250D0F684500981E51 /* TimeMachineCameraAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* TimeMachineCameraViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* TimeMachineCameraViewController.m */,
+				DB59847D126175C8001E6E77 /* CaptureWrapper.h */,
+				DB59847E126175C8001E6E77 /* CaptureWrapper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TimeMachineCameraAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* TimeMachineCameraViewController.m in Sources */,
+				DB59847F126175C8001E6E77 /* CaptureWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: masaktak okihara (7G3LDUQS37)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -204,6 +211,7 @@
 				GCC_PREFIX_HEADER = TimeMachineCamera_Prefix.pch;
 				INFOPLIST_FILE = "TimeMachineCamera-Info.plist";
 				PRODUCT_NAME = TimeMachineCamera;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17BC5F17-5A7C-467B-B913-64D99F579612";
 			};
 			name = Debug;
 		};
@@ -211,11 +219,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: masaktak okihara (7G3LDUQS37)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TimeMachineCamera_Prefix.pch;
 				INFOPLIST_FILE = "TimeMachineCamera-Info.plist";
 				PRODUCT_NAME = TimeMachineCamera;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17BC5F17-5A7C-467B-B913-64D99F579612";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -229,7 +239,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17BC5F17-5A7C-467B-B913-64D99F579612";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "817ACFB8-CEFF-4AA8-94B7-7E86EF616FA7";
 				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
@@ -244,7 +254,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17BC5F17-5A7C-467B-B913-64D99F579612";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "817ACFB8-CEFF-4AA8-94B7-7E86EF616FA7";
 				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
